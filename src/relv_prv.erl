@@ -26,7 +26,12 @@ init(State) ->
 -spec do(rebar_state:t()) -> {ok, rebar_state:t()} | {error, string()}.
 do(State) ->
   Config = rebar_state:get(State, relx, []),
-  rebar_api:console("Release version:~p", [Config]),
+  case lists:keyfind(release, 1, Config) of
+    false ->
+      rebar_api:abort("Error. Release version not found", []);
+    {release, {_Name, Version}, _} ->
+      rebar_api:console("~p", [Version])
+  end,
   {ok, State}.
 
 -spec format_error(any()) ->  iolist().

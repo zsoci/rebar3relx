@@ -2,7 +2,7 @@
 
 -export([init/1, do/1, format_error/1]).
 
--define(PROVIDER, relx).
+-define(PROVIDER, relv).
 -define(DEPS, [app_discovery]).
 
 %% ===================================================================
@@ -15,7 +15,7 @@ init(State) ->
             {module, ?MODULE},            % The module implementation of the task
             {bare, true},                 % The task can be run by the user, always true
             {deps, ?DEPS},                % The list of dependencies
-            {example, "rebar3 relx"}, % How to use the plugin
+            {example, "rebar3 relv"}, % How to use the plugin
             {opts, []},                   % list of options understood by the plugin
             {short_desc, "A rebar plugin that returns release version"},
             {desc, "A rebar plugin"}

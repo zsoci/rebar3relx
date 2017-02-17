@@ -1,7 +1,7 @@
-relx
+relv
 =====
 
-A rebar plugin
+A rebar plugin to retrieve the release version from the relx config variable
 
 Build
 -----
@@ -14,13 +14,13 @@ Use
 Add the plugin to your rebar config:
 
     {plugins, [
-        { relx, ".*", {git, "git@host:user/relx.git", {tag, "0.1.0"}}}
+        { relv, ".*", {git, "git@github.com:zsoci/rebar3relx.git", {tag, "1.0.0"}}}
     ]}.
 
 Then just call your plugin directly in an existing application:
 
 
-    $ rebar3 relx
+    $ rebar3 relv
     ===> Fetching relx
     ===> Compiling relx
-    <Plugin Output>
+    "0.0.1"

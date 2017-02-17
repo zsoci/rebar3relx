@@ -18,7 +18,8 @@ init(State) ->
             {example, "rebar3 relv"}, % How to use the plugin
             {opts, []},                   % list of options understood by the plugin
             {short_desc, "A rebar plugin that returns release version"},
-            {desc, "A rebar plugin"}
+            {desc, "A rebar plugin to retrieve release version"
+                   "from relx config"}
     ]),
     {ok, rebar_state:add_provider(State, Provider)}.
 
